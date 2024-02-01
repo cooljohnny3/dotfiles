@@ -1,24 +1,32 @@
-vim.opt.nu = true
-vim.opt.relativenumber = true
+vim.o.nu = true
+vim.o.relativenumber = true
 
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.expandtab = true
+vim.o.tabstop = 4
+vim.o.softtabstop = 4
+vim.o.shiftwidth = 4
+vim.o.expandtab = true
 
-vim.opt.smartindent = true
+vim.o.smartindent = true
 
-vim.opt.wrap = false
+vim.o.wrap = false
 
-vim.opt.swapfile = false
-vim.opt.backup = false
+vim.o.swapfile = false
+vim.o.backup = false
 
-vim.opt.hlsearch = false
-vim.opt.incsearch = true
+-- Set highlight on search
+vim.o.hlsearch = false
+vim.o.incsearch = true
 
-vim.opt.termguicolors = true
+vim.o.termguicolors = true
 
-vim.opt.scrolloff = 8
-vim.opt.signcolumn = "yes"
+vim.o.scrolloff = 8
+vim.o.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 
+vim.o.splitright = true
+vim.o.splitbelow = true
+
+-- Sync clipboard between OS and Neovim.
+--  Remove this oion if you want your OS clipboard to remain independent.
+--  See `:help 'clipboard'`
+vim.o.clipboard = 'unnamedplus'

@@ -12,8 +12,8 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-    'tpope/vim-fugitive',
     -- Git related plugins
+    'tpope/vim-fugitive',
     --'tpope/vim-rhubarb',
 
     -- Detect tabstop and shiftwidth automatically
@@ -35,7 +35,6 @@ require("lazy").setup({
             'folke/neodev.nvim',
         },
     },
-
     {
         -- Autocompletion
         'hrsh7th/nvim-cmp',
@@ -54,7 +53,6 @@ require("lazy").setup({
     },
     -- Useful plugin to show you pending keybinds.
     { 'folke/which-key.nvim', opts = {} },
-
     {
         -- Set lualine as statusline
         'nvim-lualine/lualine.nvim',
@@ -68,10 +66,8 @@ require("lazy").setup({
             },
         },
     },
-
     -- "gc" to comment visual regions/lines
     { 'numToStr/Comment.nvim', opts = {} },
-
     -- Fuzzy Finder (files, lsp, etc)
     {
         'nvim-telescope/telescope.nvim',
@@ -92,10 +88,17 @@ require("lazy").setup({
             },
         }
     },
-
     {
         -- Highlight, edit, and navigate code
         'nvim-treesitter/nvim-treesitter',
         build = ':TSUpdate'
     },
+    {
+        "folke/tokyonight.nvim",
+        lazy = false,
+        priority = 1000,
+    },
+    { 'windwp/nvim-autopairs', opts = {} },
+    'windwp/nvim-ts-autotag',
+    'mattn/emmet-vim'
 }, {})

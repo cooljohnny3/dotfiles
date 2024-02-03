@@ -15,6 +15,7 @@ end
 
 nmap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
 nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
+nmap('<leader>e', vim.diagnostic.open_float, '[E]xpand error')
 
 local builtin = require('telescope.builtin')
 nmap('gd', builtin.lsp_definitions, '[G]oto [D]efinition')

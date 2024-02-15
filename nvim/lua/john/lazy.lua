@@ -29,7 +29,7 @@ require("lazy").setup({
 
             -- Useful status updates for LSP
             -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-            { 'j-hui/fidget.nvim', opts = {} },
+            { 'j-hui/fidget.nvim',       opts = {} },
 
             -- Additional lua configuration, makes nvim stuff amazing!
             'folke/neodev.nvim',
@@ -52,7 +52,7 @@ require("lazy").setup({
         },
     },
     -- Useful plugin to show you pending keybinds.
-    { 'folke/which-key.nvim', opts = {} },
+    { 'folke/which-key.nvim',     opts = {} },
     {
         -- Set lualine as statusline
         'nvim-lualine/lualine.nvim',
@@ -70,8 +70,8 @@ require("lazy").setup({
     -- Fuzzy Finder (files, lsp, etc)
     {
         'nvim-telescope/telescope.nvim',
-        branch = '0.1.x', 
-        dependencies = { 
+        branch = '0.1.x',
+        dependencies = {
             'nvim-lua/plenary.nvim',
             -- Fuzzy Finder Algorithm which requires local dependencies to be built.
             -- Only load if `make` is available. Make sure you have the system
@@ -99,5 +99,7 @@ require("lazy").setup({
     },
     { 'windwp/nvim-autopairs', opts = {} },
     'windwp/nvim-ts-autotag',
-    'mattn/emmet-vim'
+    'mattn/emmet-vim',
+    'stevearc/conform.nvim',
+    'mfussenegger/nvim-lint'
 }, {})

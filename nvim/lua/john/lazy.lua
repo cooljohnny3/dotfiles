@@ -66,8 +66,7 @@ require("lazy").setup({
             },
         },
     },
-    -- "gc" to comment visual regions/lines
-    { 'numToStr/Comment.nvim', opts = {} },
+    { 'echasnovski/mini.comment', version = '*' },
     -- Fuzzy Finder (files, lsp, etc)
     {
         'nvim-telescope/telescope.nvim',

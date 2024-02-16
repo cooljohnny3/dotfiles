@@ -101,6 +101,5 @@ require("lazy").setup({
     'windwp/nvim-ts-autotag',
     'mattn/emmet-vim',
     'stevearc/conform.nvim',
-    'mfussenegger/nvim-lint',
     'nvim-treesitter/nvim-treesitter-context'
 }, {})

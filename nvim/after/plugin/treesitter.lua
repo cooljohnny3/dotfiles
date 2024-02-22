@@ -1,6 +1,23 @@
-require'nvim-treesitter.configs'.setup {
+require 'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all" (the five listed parsers should always be installed)
-  ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'javascript', 'typescript', 'vimdoc', 'vim', 'bash' },
+  ensure_installed = {
+    'bash',
+    'c',
+    'cpp',
+    'diff',
+    'html',
+    'go',
+    'javascript',
+    'json',
+    'lua',
+    'markdown',
+    'python',
+    'rust',
+    'tsx',
+    'typescript',
+    'vim',
+    'vimdoc',
+  },
 
   -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
   auto_install = false,

@@ -117,4 +117,9 @@ require("lazy").setup({
     'stevearc/conform.nvim',
     'nvim-treesitter/nvim-treesitter-context',
     { 'echasnovski/mini.surround', version = '*' },
+    {
+        "ThePrimeagen/harpoon",
+        branch = "harpoon2",
+        dependencies = { "nvim-lua/plenary.nvim" }
+    }
 }, {})

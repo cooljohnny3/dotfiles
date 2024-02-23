@@ -21,11 +21,11 @@ require('gitsigns').setup(
       -- normal mode
       map('n', '<leader>gb', function()
         gs.blame_line { full = false }
-      end, { desc = 'git blame line' })
-      map('n', '<leader>gd', gs.diffthis, { desc = 'git diff against index' })
+      end, { desc = '[G]it [B]lame line' })
+      map('n', '<leader>gd', gs.diffthis, { desc = '[G]it [D]iff against index' })
 
       -- Toggles
-      map('n', '<leader>gtb', gs.toggle_current_line_blame, { desc = 'toggle git blame line' })
-      map('n', '<leader>gtd', gs.toggle_deleted, { desc = 'toggle git show deleted' })
+      map('n', '<leader>gtb', gs.toggle_current_line_blame, { desc = '[G]it [T]oggle [B]lame line' })
+      map('n', '<leader>gtd', gs.toggle_deleted, { desc = '[G]it [T]oggle show [D]eleted' })
     end,
   })

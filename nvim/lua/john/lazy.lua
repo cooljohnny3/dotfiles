@@ -111,12 +111,11 @@ require("lazy").setup({
         lazy = false,
         priority = 1000,
     },
-    { 'windwp/nvim-autopairs',     opts = {} },
+    { 'windwp/nvim-autopairs', opts = {} },
     'windwp/nvim-ts-autotag',
     'mattn/emmet-vim',
     'stevearc/conform.nvim',
     'nvim-treesitter/nvim-treesitter-context',
-    { 'echasnovski/mini.surround', version = '*' },
     {
         "ThePrimeagen/harpoon",
         branch = "harpoon2",

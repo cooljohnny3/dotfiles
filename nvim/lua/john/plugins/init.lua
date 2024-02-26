@@ -62,5 +62,4 @@ return {
     },
     { 'windwp/nvim-ts-autotag' },
     { 'tpope/vim-sleuth' },
-    { 'mattn/emmet-vim' },
 }

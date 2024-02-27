@@ -62,4 +62,5 @@ return {
     },
     { 'windwp/nvim-ts-autotag' },
     { 'tpope/vim-sleuth' },
+    { 'laytan/cloak.nvim',     opts = {} }
 }

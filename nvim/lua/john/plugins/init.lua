@@ -55,11 +55,11 @@ return {
             vim.keymap.set("n", "<leader>gs", vim.cmd.Git, { desc = '[G]it [S]tatus' })
         end
     },
-    {
-        'windwp/nvim-autopairs',
-        event = "InsertEnter",
-        config = true
-    },
+    -- {
+    --     'windwp/nvim-autopairs',
+    --     event = "InsertEnter",
+    --     config = true
+    -- },
     { 'windwp/nvim-ts-autotag' },
     { 'tpope/vim-sleuth' },
     { 'laytan/cloak.nvim',     opts = {} },

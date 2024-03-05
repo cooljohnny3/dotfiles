@@ -62,5 +62,11 @@ return {
     },
     { 'windwp/nvim-ts-autotag' },
     { 'tpope/vim-sleuth' },
-    { 'laytan/cloak.nvim',     opts = {} }
+    { 'laytan/cloak.nvim',     opts = {} },
+    {
+        'mbbill/undotree',
+        config = function()
+            vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
+        end
+    }
 }

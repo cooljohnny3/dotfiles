@@ -1,4 +1,4 @@
-vim.wo.number = true
+vim.o.number = true
 vim.o.relativenumber = true
 
 vim.o.tabstop = 4
@@ -49,3 +49,6 @@ vim.o.completeopt = 'menuone,noselect'
 
 -- NOTE: You should make sure your terminal supports this
 vim.o.termguicolors = true
+
+-- Don't show the mode, since it's already in status line
+vim.opt.showmode = false

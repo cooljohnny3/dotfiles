@@ -1,12 +1,10 @@
 -- Fuzzy Finder (files, lsp, etc)
 return {
     'nvim-telescope/telescope.nvim',
+    event = 'VimEnter',
     branch = '0.1.x',
     dependencies = {
         'nvim-lua/plenary.nvim',
-        -- Fuzzy Finder Algorithm which requires local dependencies to be built.
-        -- Only load if `make` is available. Make sure you have the system
-        -- requirements installed.
         {
             'nvim-telescope/telescope-fzf-native.nvim',
             -- NOTE: If you are having trouble with this installation,
@@ -34,6 +32,25 @@ return {
         -- See `:help telescope.builtin`
         local builtin = require('telescope.builtin')
 
+        vim.keymap.set('n', '<leader>?', builtin.oldfiles, { desc = '[?] Find recently opened files' })
+        vim.keymap.set('n', '<leader><space>', builtin.buffers, { desc = '[ ] Find existing buffers' })
+        vim.keymap.set('n', '<leader>/', builtin.current_buffer_fuzzy_find,
+            { desc = '[/] Fuzzily search in current buffer' })
+
+        vim.keymap.set('n', '<leader>s/', function()
+            builtin.live_grep {
+                grep_open_files = true,
+                prompt_title = 'Live Grep in Open Files',
+            }
+        end, { desc = '[S]earch [/] in Open Files' })
+        vim.keymap.set('n', '<leader>ss', builtin.builtin, { desc = '[S]earch [S]elect Telescope' })
+        vim.keymap.set('n', '<leader>sf', builtin.find_files, { desc = '[S]earch [F]iles' })
+        vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = '[S]earch [H]elp' })
+        vim.keymap.set('n', '<leader>sw', builtin.grep_string, { desc = '[S]earch current [W]ord' })
+        vim.keymap.set('n', '<leader>sg', builtin.live_grep, { desc = '[S]earch by [G]rep' })
+        vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
+        vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume' })
+
         -- Function to find the git root directory based on the current buffer's path
         local function find_git_root()
             -- Use the current buffer's path as the starting point for the git search
@@ -57,39 +74,19 @@ return {
             end
             return git_root
         end
-
-        vim.keymap.set('n', '<leader>?', builtin.oldfiles, { desc = '[?] Find recently opened files' })
-        vim.keymap.set('n', '<leader><space>', builtin.buffers, { desc = '[ ] Find existing buffers' })
-        vim.keymap.set('n', '<leader>/', builtin.current_buffer_fuzzy_find,
-            { desc = '[/] Fuzzily search in current buffer' })
-
-        local function telescope_live_grep_open_files()
-            builtin.live_grep {
-                grep_open_files = true,
-                prompt_title = 'Live Grep in Open Files',
-            }
-        end
-
-        vim.keymap.set('n', '<leader>s/', telescope_live_grep_open_files, { desc = '[S]earch [/] in Open Files' })
-        vim.keymap.set('n', '<leader>ss', builtin.builtin, { desc = '[S]earch [S]elect Telescope' })
-        vim.keymap.set('n', '<leader>sf', builtin.find_files, { desc = '[S]earch [F]iles' })
-        vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = '[S]earch [H]elp' })
-        vim.keymap.set('n', '<leader>sw', builtin.grep_string, { desc = '[S]earch current [W]ord' })
-        vim.keymap.set('n', '<leader>sg', builtin.live_grep, { desc = '[S]earch by [G]rep' })
-        vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
-        vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume' })
-
         vim.keymap.set('n', '<leader>gf', builtin.git_files, { desc = 'Search [G]it [F]iles' })
-
-        local function live_grep_git_root()
+        vim.keymap.set('n', '<leader>gg', function()
             local git_root = find_git_root()
             if git_root then
                 builtin.live_grep {
                     search_dirs = { git_root },
                 }
             end
-        end
+        end, { desc = 'Search by [G]rep on [G]it Root' })
 
-        vim.keymap.set('n', '<leader>gg', live_grep_git_root, { desc = 'Search by [G]rep on [G]it Root' })
+        -- Shortcut for searching your neovim configuration files
+        vim.keymap.set('n', '<leader>sn', function()
+            builtin.find_files { cwd = vim.fn.stdpath 'config' }
+        end, { desc = '[S]earch [N]eovim files' })
     end
 }

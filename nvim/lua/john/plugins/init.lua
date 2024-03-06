@@ -4,27 +4,32 @@ return {
         lazy = false,
         priority = 1000,
         config = function()
-            require("tokyonight").setup({
-                style = "night", -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
-            })
-            vim.cmd [[colorscheme tokyonight]]
+            -- `storm`, `moon`, a darker variant `night` and `day`
+            vim.cmd.colorscheme('tokyonight-night')
         end
     },
     {
         'stevearc/conform.nvim',
         opts = {
+            notify_on_error = false,
+            format_on_save = {
+                timeout_ms = 500,
+                lsp_fallback = true,
+            },
             formatters_by_ft = {
                 ["javascript"] = { "prettier" },
                 ["javascriptreact"] = { "prettier" },
                 ["typescript"] = { "prettier" },
                 ["typescriptreact"] = { "prettier" },
                 ["vue"] = { "prettier" },
-            },
-            format_on_save = {
-                timeout_ms = 500,
-                lsp_fallback = true,
             }
         }
+    },
+    {
+        'folke/todo-comments.nvim',
+        event = 'VimEnter',
+        dependencies = { 'nvim-lua/plenary.nvim' },
+        opts = { signs = false }
     },
     {
         'echasnovski/mini.comment',
@@ -60,9 +65,8 @@ return {
     --     event = "InsertEnter",
     --     config = true
     -- },
-    { 'windwp/nvim-ts-autotag' },
     { 'tpope/vim-sleuth' },
-    { 'laytan/cloak.nvim',     opts = {} },
+    { 'laytan/cloak.nvim', opts = {} },
     {
         'mbbill/undotree',
         config = function()

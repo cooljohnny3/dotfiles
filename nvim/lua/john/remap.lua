@@ -18,8 +18,7 @@ vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
 -- easier moving between windows
-vim.keymap.set("n", "<C-h>", "<C-W><C-H>")
-vim.keymap.set("n", "<C-j>", "<C-W><C-J>")
-vim.keymap.set("n", "<C-k>", "<C-W><C-K>")
-vim.keymap.set("n", "<C-l>", "<C-W><C-L>")
-
+vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
+vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
+vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
+vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })

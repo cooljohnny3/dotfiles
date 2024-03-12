@@ -15,17 +15,20 @@ return {
             end,
         },
     },
-    ops = {
-        defaults = {
-            mappings = {
-                i = {
-                    ['<C-u>'] = false,
-                    ['<C-d>'] = false,
+    config = function()
+        require('telescope').setup {
+            defaults = {
+                mappings = {
+                    i = {
+                        ['<C-u>'] = false,
+                        ['<C-d>'] = false,
+                        ['<C-n>'] = require('telescope.actions').move_selection_worse,
+                        ['<C-p>'] = require('telescope.actions').move_selection_better
+                    },
                 },
             },
-        },
-    },
-    config = function()
+        }
+
         -- Enable telescope fzf native, if installed
         pcall(require('telescope').load_extension, 'fzf')
 

@@ -10,7 +10,7 @@ return {
         { 'j-hui/fidget.nvim', opts = {} },
 
         -- Additional lua configuration, makes nvim stuff amazing!
-        'folke/neodev.nvim',
+        { 'folke/neodev.nvim', opts = {} },
     },
     config = function()
         vim.api.nvim_create_autocmd('LspAttach', {
@@ -137,9 +137,6 @@ return {
             rust_analyzer = {},
             tsserver = {},
         }
-
-        -- Setup neovim lua configuration
-        require('neodev').setup()
 
         -- Ensure the servers and tools above are installed
         --  To check the current status of installed tools and/or manually install

@@ -4,7 +4,7 @@ return {
         -- Automatically install LSPs to stdpath for neovim
         'williamboman/mason.nvim',
         'williamboman/mason-lspconfig.nvim',
-        -- 'WhoIsSethDaniel/mason-tool-installer.nvim',
+        'WhoIsSethDaniel/mason-tool-installer.nvim',
 
         -- Useful status updates for LSP
         { 'j-hui/fidget.nvim', opts = {} },
@@ -104,10 +104,12 @@ return {
         --  - settings (table): Override the default settings passed when initializing the server.
         --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
         local servers = {
-            bashls = {},
             clangd = {},
+            emmet_language_server = {},
             eslint = {},
-            jsonls = {},
+            gopls = {},
+            html = {},
+            htmx = {},
             lua_ls = {
                 -- cmd = {...},
                 -- filetypes { ...},
@@ -135,6 +137,7 @@ return {
                 },
             },
             rust_analyzer = {},
+            tailwindcss = {},
             tsserver = {},
         }
 
@@ -152,7 +155,7 @@ return {
         vim.list_extend(ensure_installed, {
             'stylua', -- Used to format lua code
         })
-        -- require('mason-tool-installer').setup { ensure_installed = ensure_installed }
+        require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
         require('mason-lspconfig').setup {
             handlers = {

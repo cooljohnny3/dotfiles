@@ -107,5 +107,9 @@ return {
             -- vim.keymap.set("n", "<leader>tl", function() require("trouble").toggle("loclist") end)
             -- vim.keymap.set("n", "gR", function() require("trouble").toggle("lsp_references") end)
         end
+    },
+    {
+        'Exafunction/codeium.vim',
+        event = 'BufEnter',
     }
 }

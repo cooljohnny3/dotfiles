@@ -111,5 +111,9 @@ return {
     {
         'Exafunction/codeium.vim',
         event = 'BufEnter',
+        cond = function()
+            local path = vim.api.nvim_buf_get_name(0)
+            return not string.find(path, "code/nts")
+        end
     }
 }

@@ -20,8 +20,14 @@ return {
 
             -- Actions
             -- normal mode
-            map('n', ']h', function() gs.next_hunk({ navigation_message = false }) end, { desc = 'Next Hunk' })
-            map('n', '[h', function() gs.prev_hunk({ navigation_message = false }) end, { desc = 'Prev Hunk' })
+            map('n', ']h', function()
+                gs.next_hunk({ navigation_message = false })
+                vim.api.nvim_feedkeys('zz', 'n', false)
+            end, { desc = 'Next Hunk' })
+            map('n', '[h', function()
+                gs.prev_hunk({ navigation_message = false })
+                vim.api.nvim_feedkeys('zz', 'n', false)
+            end, { desc = 'Prev Hunk' })
             map('n', '<leader>gs', function() gs.stage_hunk() end, { desc = '[G]it [S]tage Hunk' })
             map('n', '<leader>gr', function() gs.reset_hunk() end, { desc = '[G]it [R]eset Hunk' })
             map('n', '<leader>gu', function() gs.undo_stage_hunk() end, { desc = '[G]it [U]ndo Stage Hunk' })

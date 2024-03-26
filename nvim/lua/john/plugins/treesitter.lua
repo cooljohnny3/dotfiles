@@ -16,6 +16,7 @@ return {
                     'c',
                     'cpp',
                     'diff',
+                    'dockerfile',
                     'html',
                     'go',
                     'javascript',

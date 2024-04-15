@@ -139,6 +139,10 @@ return {
             rust_analyzer = {},
             tailwindcss = {},
             tsserver = {},
+            zls = {
+                cmd = { vim.fn.expand('~/code/personal/zig/zls/zig-out/bin/zls') },
+                filetypes = { 'zig' },
+            }
         }
 
         -- Ensure the servers and tools above are installed

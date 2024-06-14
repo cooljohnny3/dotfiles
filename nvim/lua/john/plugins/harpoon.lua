@@ -10,7 +10,7 @@ return {
         vim.keymap.set("n", "<leader>hu", function()
             harpoon.ui:toggle_quick_menu(harpoon:list())
         end, { desc = "[H]arpoon [U]i" })
-        vim.keymap.set("n", "<leader>ha", function() harpoon:list():append() end, { desc = "[H]arpoon [A]ppend" })
+        vim.keymap.set("n", "<leader>ha", function() harpoon:list():add() end, { desc = "[H]arpoon [A]ppend" })
 
         vim.keymap.set("n", "<leader>h1", function() harpoon:list():select(1) end, { desc = "[H]arpoon nav to [1]" })
         vim.keymap.set("n", "<leader>h2", function() harpoon:list():select(2) end, { desc = "[H]arpoon nav to [2]" })

@@ -115,5 +115,11 @@ return {
             local path = vim.api.nvim_buf_get_name(0)
             return not string.find(path, "code/nts")
         end
+    },
+    {
+        "iamcco/markdown-preview.nvim",
+        cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+        ft = { "markdown" },
+        build = function() vim.fn["mkdp#util#install"]() end,
     }
 }

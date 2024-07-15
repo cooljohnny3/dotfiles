@@ -11,6 +11,7 @@ return {
             { "<leader>h",  group = "[H]arpoon" },
             { "<leader>r",  group = "[R]ename" },
             { "<leader>s",  group = "[S]earch" },
+            { "<leader>t",  group = "[T]rouble" },
             { "<leader>u",  group = "[U]ndo tree" },
             { "<leader>w",  group = "[W]orkspace" },
         }

@@ -33,8 +33,6 @@ return {
             completion = { completeopt = 'menu,menuone,noinsert' },
 
             mapping = cmp.mapping.preset.insert {
-                ['<C-n>'] = cmp.mapping.select_next_item(),
-                ['<C-p>'] = cmp.mapping.select_prev_item(),
                 ['<CR>'] = cmp.mapping.confirm { select = true },
                 -- Manually trigger a completion from nvim-cmp.
                 --  Generally you don't need this, because nvim-cmp will display

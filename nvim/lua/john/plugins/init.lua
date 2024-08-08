@@ -22,6 +22,7 @@ return {
                 ["typescript"] = { "prettier" },
                 ["typescriptreact"] = { "prettier" },
                 ["vue"] = { "prettier" },
+                ["go"] = { "gofmt" },
             }
         }
     },

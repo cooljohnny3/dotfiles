@@ -122,7 +122,13 @@ return {
         --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
         local servers = {
             clangd = {},
-            emmet_language_server = {},
+            emmet_language_server = {
+                filetypes = vim.tbl_extend(
+                    'force',
+                    require('lspconfig')['emmet_language_server'].document_config.default_config.filetypes,
+                    { 'php' }
+                )
+            },
             eslint = {},
             gopls = {},
             html = {},

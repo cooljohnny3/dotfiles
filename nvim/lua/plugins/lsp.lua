@@ -206,13 +206,13 @@ return {
 			local servers = {
 				clangd = {},
 				emmet_language_server = {
-					filetypes = vim.tbl_extend(
-						"force",
-						require("lspconfig")["emmet_language_server"]
-						.document_config
-						.default_config.filetypes,
-						{ "php" }
-					),
+					-- TODO: Figure out why this doesn't work
+					-- filetypes = vim.tbl_extend(
+					-- 	"force",
+					-- 	vim.lsp.config["emmet_language_server"]
+					-- 	.filetypes,
+					-- 	{ "php" }
+					-- ),
 				},
 				eslint = {},
 				gopls = {},
@@ -266,7 +266,7 @@ return {
 						server.capabilities = vim.tbl_deep_extend("force", {},
 							capabilities,
 							server.capabilities or {})
-						require("lspconfig")[server_name].setup(server)
+						vim.lsp.config(server_name, server)
 					end,
 				},
 			})
